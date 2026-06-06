@@ -26,18 +26,19 @@
             padding: 60px;
             border: 4px solid #6c1c34;
             box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+            box-sizing: border-box; /* Ayuda a que el padding no desborde la pantalla */
         }
 
         /* Encabezado */
         .header-ipn {
-            position: relative; /* Mantiene los escudos en su lugar */
+            position: relative; /* Mantiene los escudos en su lugar en PC */
             text-align: center;
             border-bottom: 6px double #6c1c34;
             margin-bottom: 60px;
             padding-bottom: 30px;
         }
         
-        /* Posición de los escudos */
+        /* Posición de los escudos en PC */
         .escudo-izq {
             position: absolute;
             top: 0;
@@ -110,8 +111,9 @@
             background: #fff;
             border: 1px solid #bbb;
             padding: 10px;
+            box-sizing: border-box;
         }
-        .foto-item img { width: 100%; height: 250px; background: #eee; border: 1px solid #ddd; }
+        .foto-item img { max-width: 100%; height: auto; background: #eee; border: 1px solid #ddd; }
 
         table {
             width: 100%;
@@ -127,6 +129,34 @@
             padding: 20px;
             margin: 30px 0;
             font-style: italic;
+        }
+
+        /* ========================================= */
+        /* MAGIA PARA CELULARES (ADAPTACIÓN MÓVIL) */
+        /* ========================================= */
+        @media (max-width: 768px) {
+            .contenedor-maximo {
+                padding: 20px; /* Quita los bordes gigantes blancos en celular */
+                width: 100%;
+                border-width: 2px;
+            }
+            
+            /* Acomodo de los escudos para que no tapen el texto */
+            .escudo-izq, .escudo-der {
+                position: relative;
+                display: inline-block;
+                width: 80px; /* Más pequeños en celular */
+                margin: 0 10px 15px 10px;
+            }
+            
+            /* Ajuste de tamaños de letra para que quepan bien */
+            .header-ipn h1 { font-size: 26px !important; }
+            .header-ipn h2 { font-size: 18px !important; }
+            .titulo-link-regreso { font-size: 24px; }
+            
+            .foto-item { width: 100%; } /* Las fotos se ponen una debajo de otra */
+            .indice-detallado ul { columns: 1 !important; } /* El índice en una sola columna */
+            .indice-detallado { padding: 20px; }
         }
     </style>
 </head>
@@ -189,18 +219,18 @@
         <p>Aquí presentamos las imágenes que explican visualmente cada componente de nuestra idea:</p>
         <div class="grid-fotos-tecnicas">
             <div class="foto-item">
-              <p><img src="D.png" width="618" height="627"><strong>Herramientas Necesarias: Las herramientas que necesitaremos para poder elaborar con éxito este proyecto </strong></p>
+              <p><img src="D.png" alt="Herramientas"><br><strong>Herramientas Necesarias: Las herramientas que necesitaremos para poder elaborar con éxito este proyecto </strong></p>
           </div>
             <div class="foto-item">
-              <p><img src="C.png" width="933" height="866"></p>
+              <p><img src="C.png" alt="Célula"></p>
               <p><b>Célula de Energía:</b> Módulo que se instala bajo el piso para capturar el impacto de cada pisada.</p>
           </div>
             <div class="foto-item">
-              <p><img src="B.png" width="827" height="943"></p>
+              <p><img src="B.png" alt="Biométrico"></p>
               <p><b>Módulo Biométrico:</b> Sensor óptico de alta resolución capaz de reconocer huellas incluso en condiciones de humedad.</p>
           </div>
             <div class="foto-item">
-              <p><img src="A.png" width="941" height="835"></p>
+              <p><img src="A.png" alt="Baterías"></p>
               <p><b>Banco de Baterías:</b> Sistema de almacenamiento de Litio-Ferrofosfato para mayor seguridad y duración.</p>
           </div>
         </div>
