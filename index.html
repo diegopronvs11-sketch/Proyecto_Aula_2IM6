@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <title>PROYECTO AULA - INFORME TÉCNICO INTEGRAL - GRUPO 2IM6 </title>
     <style>
-      CSS
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
         body {
             font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
             background-color: #f0f2f5;
@@ -30,10 +30,28 @@ html, body {
 
         /* Encabezado */
         .header-ipn {
+            position: relative; /* Mantiene los escudos en su lugar */
             text-align: center;
             border-bottom: 6px double #6c1c34;
             margin-bottom: 60px;
             padding-bottom: 30px;
+        }
+        
+        /* Posición de los escudos */
+        .escudo-izq {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110px;
+            height: auto;
+        }
+
+        .escudo-der {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 110px;
+            height: auto;
         }
 
         /* Índice estilo "Plan de Vuelo" */
@@ -117,12 +135,20 @@ html, body {
 <div class="contenedor-maximo">
 
   <div class="header-ipn">
+        <img src="escudo_ipn.png" class="escudo-izq" alt="Escudo IPN">
+        <img src="escudo_cecyt11.png" class="escudo-der" alt="Escudo CECyT 11">
+        
         <h1 style="font-size: 42px; margin: 0;">INSTITUTO POLITÉCNICO NACIONAL</h1>
         <h2 style="margin: 5px;">CECyT 11 "Wilfrido Massieu"</h2>
         <hr style="width: 50%; border: 1px solid #6c1c34;">
-      <h2 style="color: #6c1c34;">PROYECTO AULA</h2>
-        <h2 style="color: #6c1c34;">Instalacion de Lockers de Carga con Energia Piezoelectrica</h2>
-      <p> <strong> Por: Grupo: 2IM6
+        <h2 style="color: #6c1c34;">PROYECTO AULA</h2>
+        <h2 style="color: #6c1c34;">Instalación de Lockers de Carga con Energía Piezoeléctrica</h2>
+        
+        <div style="margin-top: 25px; font-size: 18px;">
+            <p style="margin: 5px 0; text-align: center;"><strong>Por Grupo:</strong> 2IM6</p>
+            <p style="margin: 5px 0; text-align: center;"><strong>Coordinadora:</strong> Jessica Alejandra Loza Solís</p>
+            <p style="margin: 5px 0; text-align: center;"><strong>Fecha:</strong> 6 de junio de 2026</p>
+        </div>
     </div>
 
     <div class="indice-detallado" id="main-index">
@@ -163,7 +189,7 @@ html, body {
         <p>Aquí presentamos las imágenes que explican visualmente cada componente de nuestra idea:</p>
         <div class="grid-fotos-tecnicas">
             <div class="foto-item">
-              <p><img src="D.png" width="618" height="627"><strong>Herramientas Necesarias: Las herramientas que necesitaremos para poder elaborar con exito este proyecto </strong></p>
+              <p><img src="D.png" width="618" height="627"><strong>Herramientas Necesarias: Las herramientas que necesitaremos para poder elaborar con éxito este proyecto </strong></p>
           </div>
             <div class="foto-item">
               <p><img src="C.png" width="933" height="866"></p>
@@ -199,11 +225,11 @@ html, body {
         <span class="aviso-link"> </span>
         <div style="background:#000; color:#fff; padding:50px; margin-bottom:20px;">
             <h3>VIDEO 1: El Futuro de la Energía Mecánica</h3>
-            <p> <a href=https://www.youtube.com/watch?v=JAO132MsTiY> 1er Video aqui </a></p>
+            <p> <a href="https://www.youtube.com/watch?v=JAO132MsTiY"> 1er Video aquí </a></p>
         </div>
         <div style="background:#000; color:#fff; padding:50px;">
-            <h3>VIDEO 2: Seguridad Biometrica </h3>
-            <p> <a href="https://www.youtube.com/watch?v=wLFPOeB_3a4"> 2do Video aqui </a></p>
+            <h3>VIDEO 2: Seguridad Biométrica </h3>
+            <p> <a href="https://www.youtube.com/watch?v=wLFPOeB_3a4"> 2do Video aquí </a></p>
         </div>
     </div>
 
