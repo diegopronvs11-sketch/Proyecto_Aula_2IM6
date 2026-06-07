@@ -111,9 +111,8 @@
             background: #fff;
             border: 1px solid #bbb;
             padding: 10px;
-            box-sizing: border-box;
         }
-        .foto-item img { max-width: 100%; height: auto; background: #eee; border: 1px solid #ddd; }
+        .foto-item img { width: 100%; height: 250px; background: #eee; border: 1px solid #ddd; }
 
         table {
             width: 100%;
@@ -143,20 +142,28 @@
             
             /* Acomodo de los escudos para que no tapen el texto */
             .escudo-izq, .escudo-der {
-                position: relative;
+                position: relative; /* Cambia a posición de flujo normal */
                 display: inline-block;
-                width: 80px; /* Más pequeños en celular */
-                margin: 0 10px 15px 10px;
+                vertical-align: middle;
+                width: 80px; /* Más pequeños para celular */
+                height: auto;
+                margin: 0 10px 15px 10px; /* Separación alrededor y debajo */
+                float: none;
+                left: auto; top: auto; right: auto; bottom: auto; /* Reinicia valores absolutos */
             }
             
-            /* Ajuste de tamaños de letra para que quepan bien */
-            .header-ipn h1 { font-size: 26px !important; }
-            .header-ipn h2 { font-size: 18px !important; }
-            .titulo-link-regreso { font-size: 24px; }
+            /* Ajuste de tamaños de letra para que quepan bien en celular */
+            .header-ipn h1 {
+                font-size: 24px !important; /* *drásticamente* más chico para celular *fuerza* */
+            }
             
-            .foto-item { width: 100%; } /* Las fotos se ponen una debajo de otra */
-            .indice-detallado ul { columns: 1 !important; } /* El índice en una sola columna */
-            .indice-detallado { padding: 20px; }
+            .header-ipn h2 {
+                font-size: 18px !important; /* achica los cabezales un poco *fuerza* */
+            }
+            
+            .header-ipn hr { width: 80%; } /* línea más larga para celular */
+
+            .header-ipn div { margin-top: 15px; font-size: 16px !important;}
         }
     </style>
 </head>
@@ -175,6 +182,12 @@
         <h2 style="color: #6c1c34;">Instalación de Lockers de Carga con Energía Piezoeléctrica</h2>
         
         <div style="margin-top: 25px; font-size: 18px;">
+            <p style="margin: 5px 0; text-align: center;"><strong>Integrantes: Huerta Carbajal Diego</strong></p>
+            <p style="margin: 5px 0; text-align: center;"><strong>Carmona Macías Alex </strong></p>
+            <p style="margin: 5px 0; text-align: center;"><strong>Capiz Saldaña</strong><strong> Pamela Celeste</strong></p>
+            <p style="margin: 5px 0; text-align: center;"><strong>Hernández Cruz Daniela Getsemany</strong></p>
+            <p style="margin: 5px 0; text-align: center;"><strong>Aguilar Villamar Jahaziel Aminadad</strong></p>
+            <br>
             <p style="margin: 5px 0; text-align: center;"><strong>Por Grupo:</strong> 2IM6</p>
             <p style="margin: 5px 0; text-align: center;"><strong>Coordinadora:</strong> Jessica Alejandra Loza Solís</p>
             <p style="margin: 5px 0; text-align: center;"><strong>Fecha:</strong> 6 de junio de 2026</p>
@@ -219,18 +232,18 @@
         <p>Aquí presentamos las imágenes que explican visualmente cada componente de nuestra idea:</p>
         <div class="grid-fotos-tecnicas">
             <div class="foto-item">
-              <p><img src="D.png" alt="Herramientas"><br><strong>Herramientas Necesarias: Las herramientas que necesitaremos para poder elaborar con éxito este proyecto </strong></p>
+              <p><img src="D.png" width="618" height="627"><strong>Herramientas Necesarias: Las herramientas que necesitaremos para poder elaborar con éxito este proyecto </strong></p>
           </div>
             <div class="foto-item">
-              <p><img src="C.png" alt="Célula"></p>
+              <p><img src="C.png" width="933" height="866"></p>
               <p><b>Célula de Energía:</b> Módulo que se instala bajo el piso para capturar el impacto de cada pisada.</p>
           </div>
             <div class="foto-item">
-              <p><img src="B.png" alt="Biométrico"></p>
+              <p><img src="B.png" width="827" height="943"></p>
               <p><b>Módulo Biométrico:</b> Sensor óptico de alta resolución capaz de reconocer huellas incluso en condiciones de humedad.</p>
           </div>
             <div class="foto-item">
-              <p><img src="A.png" alt="Baterías"></p>
+              <p><img src="A.png" width="941" height="835"></p>
               <p><b>Banco de Baterías:</b> Sistema de almacenamiento de Litio-Ferrofosfato para mayor seguridad y duración.</p>
           </div>
         </div>
@@ -243,7 +256,7 @@
         <p>Este sistema es extremadamente eficiente en lugares como el Wilfrido Massieu, donde transitan miles de personas diariamente. Hemos calculado que con el flujo constante hacia los edificios B y C, podemos generar energía suficiente no solo para cargar los celulares, sino para mantener prendidas las pantallas informativas de los lockers durante más de 15 horas al día, cubriendo perfectamente los turnos matutino y vespertino sin depender de la red eléctrica externa.</p>
     </div>
 
-    <div id="sec5">
+    <div id="sec9">
         <a href="#main-index" class="titulo-link-regreso">5. Ingeniería de Seguridad Biométrica</a>
         <span class="aviso-link"> </span>
         <p>La seguridad biométrica es la aplicación de métodos matemáticos y estadísticos sobre los rasgos físicos de una persona. Para nuestro proyecto, elegimos el reconocimiento de huella dactilar porque es un patrón único y prácticamente imposible de duplicar en el entorno escolar. A diferencia de las llaves tradicionales (que se pierden) o los códigos NIP (que se olvidan o se comparten), la huella garantiza que el usuario sea el único con poder de apertura.</p>
@@ -321,7 +334,7 @@
     <div id="sec10">
         <a href="#main-index" class="titulo-link-regreso">10. Innovación y Visión Tecnológica 2030</a>
         <span class="aviso-link"> </span>
-        <p>Este proyecto es solo el primer paso. Nuestra visión a futuro incluye la integración de una **Pantalla Digital Informativa** que muestre en tiempo real la "energía del grupo". Queremos que los alumnos vean cómo sus pasos se convierten en carga. También proponemos el desarrollo de una aplicación móvil que te avise mediante una notificación cuando tu celular haya alcanzado el 100% de carga o si el locker ha sido intentado abrir de forma errónea.</p>
+        <p>Este proyecto es solo el primer paso. Nuestra visión a futuro incluye la integración de una **Pantalla Digital Informativa** que muestre en tiempo real la "energía del grupo". Queremos que los alumnos vean cómo sus pasos se convierten en carga. Also proponemos el desarrollo de una aplicación móvil que te avise mediante una notificación cuando tu celular haya alcanzado el 100% de carga o si el locker ha sido intentado abrir de forma errónea.</p>
         <div class="nota-especial">
             "La innovación no es solo tecnología nueva, es aplicar la tecnología para resolver problemas humanos de forma sustentable."
         </div>
