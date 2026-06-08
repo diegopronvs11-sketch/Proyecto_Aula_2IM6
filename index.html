@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>PROYECTO AULA - INFORME TÉCNICO INTEGRAL - GRUPO 2IM6 </title>
     <style>
@@ -114,10 +114,21 @@
         }
         .foto-item img { width: 100%; height: 250px; background: #eee; border: 1px solid #ddd; }
 
+        /* ======================================================= */
+        /* CAJA DESLIZABLE UNIVERSAL PARA LA TABLA (NO BORRAR)     */
+        /* ======================================================= */
+        .contenedor-tabla {
+            width: 100%;
+            overflow-x: auto; /* Permite deslizar a los lados */
+            -webkit-overflow-scrolling: touch; /* Fluidez en iOS/Android */
+            margin: 30px 0;
+            padding-bottom: 15px; /* Espacio para que no se coma la barra */
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 30px 0;
+            min-width: 600px; /* Obliga al sistema a activar la barra en celulares */
         }
         th { background-color: #6c1c34; color: white; padding: 15px; border: 1px solid #000; }
         td { border: 1px solid #000; padding: 15px; font-size: 16px; }
@@ -131,7 +142,7 @@
         }
 
         /* ========================================= */
-        /* MAGIA PARA CELULARES (ADAPTACIÓN MÓVIL) */
+        /* MAGIA PARA CELULARES (ADAPTACIÓN MÓVIL)   */
         /* ========================================= */
         @media (max-width: 768px) {
             .contenedor-maximo {
@@ -154,14 +165,14 @@
             
             /* Ajuste de tamaños de letra para que quepan bien en celular */
             .header-ipn h1 {
-                font-size: 24px !important; /* *drásticamente* más chico para celular *fuerza* */
+                font-size: 24px !important;
             }
             
             .header-ipn h2 {
-                font-size: 18px !important; /* achica los cabezales un poco *fuerza* */
+                font-size: 18px !important;
             }
             
-            .header-ipn hr { width: 80%; } /* línea más larga para celular */
+            .header-ipn hr { width: 80%; }
 
             .header-ipn div { margin-top: 15px; font-size: 16px !important;}
         }
@@ -171,7 +182,7 @@
 
 <div class="contenedor-maximo">
 
-  <div class="header-ipn">
+    <div class="header-ipn">
         <img src="E.jpeg" class="escudo-izq" alt="Escudo IPN">
         <img src="F.png" class="escudo-der" alt="Escudo CECyT 11">
         
@@ -291,38 +302,41 @@
     <div id="sec8">
         <a href="#main-index" class="titulo-link-regreso">8. Presupuesto Detallado y Materiales</a>
         <span class="aviso-link"> </span>
-        <table>
-            <tr>
-                <th>Elemento Técnico</th>
-                <th>Justificación del Material</th>
-                <th>Inversión Estimada</th>
-            </tr>
-            <tr>
-                <td>Locker Metálico (20 espacios)</td>
-                <td>Acero reforzado con pintura electrostática antinitrato.</td>
-                <td>$16,000</td>
-            </tr>
-            <tr>
-                <td>15 Placas Piezoeléctricas</td>
-                <td>Cerámica técnica de alta resistencia para alto tráfico peatonal.</td>
-                <td>$18,000</td>
-            </tr>
-            <tr>
-                <td>Sistema Biométrico y Placas</td>
-                <td>Sensores ópticos y microcontroladores tipo Arduino/Raspberry.</td>
-                <td>$19,000</td>
-            </tr>
-            <tr>
-                <td>Baterías y Cableado</td>
-                <td>Baterías de ciclo profundo para almacenamiento prolongado.</td>
-                <td>$25,000</td>
-            </tr>
-            <tr>
-                <td colspan="2"><b>COSTO TOTAL DEL PROYECTO</b></td>
-                <td><b>$78,000 MXN</b></td>
-            </tr>
-        </table>
-    </div>
+        
+        <div class="contenedor-tabla">
+            <table>
+                <tr>
+                    <th>Elemento Técnico</th>
+                    <th>Justificación del Material</th>
+                    <th>Inversión Estimada</th>
+                </tr>
+                <tr>
+                    <td>Locker Metálico (20 espacios)</td>
+                    <td>Acero reforzado con pintura electrostática antinitrato.</td>
+                    <td>$16,000</td>
+                </tr>
+                <tr>
+                    <td>15 Placas Piezoeléctricas</td>
+                    <td>Cerámica técnica de alta resistencia para alto tráfico peatonal.</td>
+                    <td>$18,000</td>
+                </tr>
+                <tr>
+                    <td>Sistema Biométrico y Placas</td>
+                    <td>Sensores ópticos y microcontroladores tipo Arduino/Raspberry.</td>
+                    <td>$19,000</td>
+                </tr>
+                <tr>
+                    <td>Baterías y Cableado</td>
+                    <td>Baterías de ciclo profundo para almacenamiento prolongado.</td>
+                    <td>$25,000</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>COSTO TOTAL DEL PROYECTO</b></td>
+                    <td><b>$78,000 MXN</b></td>
+                </tr>
+            </table>
+        </div>
+        </div>
 
     <div id="sec9">
         <a href="#main-index" class="titulo-link-regreso">9. Evaluación de Impacto y Metodología</a>
@@ -334,7 +348,7 @@
     <div id="sec10">
         <a href="#main-index" class="titulo-link-regreso">10. Innovación y Visión Tecnológica 2030</a>
         <span class="aviso-link"> </span>
-        <p>Este proyecto es solo el primer paso. Nuestra visión a futuro incluye la integración de una **Pantalla Digital Informativa** que muestre en tiempo real la "energía del grupo". Queremos que los alumnos vean cómo sus pasos se convierten en carga. Also proponemos el desarrollo de una aplicación móvil que te avise mediante una notificación cuando tu celular haya alcanzado el 100% de carga o si el locker ha sido intentado abrir de forma errónea.</p>
+        <p>Este proyecto es solo el primer paso. Nuestra visión a futuro incluye la integración de una **Pantalla Digital Informativa** que muestre en tiempo real la "energía del grupo". Queremos que los alumnos vean cómo sus pasos se convierten en carga. También proponemos el desarrollo de una aplicación móvil que te avise mediante una notificación cuando tu celular haya alcanzado el 100% de carga o si el locker ha sido intentado abrir de forma errónea.</p>
         <div class="nota-especial">
             "La innovación no es solo tecnología nueva, es aplicar la tecnología para resolver problemas humanos de forma sustentable."
         </div>
